@@ -14,38 +14,38 @@ import com.tna.campus_store.beans.Order;
 import com.tna.campus_store.beans.Product;
 import com.tna.campus_store.beans.User;
 
-public class UserRepositoryImpl implements UserRepositoryDefine{
+public class UserRepositoryImpl implements UserRepositoryDefine {
 
-	@PersistenceContext
-	private EntityManager entityManager;
-	@Autowired
-	private UserRepository userRepository;
-	@Autowired
-	private ProductRepository productRepository;
-	
-	@Override
-	@Transactional
-	public Order generatorOrder(Product product, User user) {
-		Order order = new Order();
-		return order;
-	}
+    @PersistenceContext
+    private EntityManager entityManager;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
-	@Override
-	@Transactional(propagation = Propagation.REQUIRED)
-	public Order purchaseByAccount(Product product, User user,Integer count) {
-		Order order = new Order();
-		order.setCreateTime(new Date());
-		order.setStatus(0);
-		order.setCount(count);
-		Double total = product.getSellPrice()*count;
-		order.setTotal(total);
-		product.setCount(product.getCount()-count);
-		user.setMoney(new BigDecimal(user.getMoney()-total).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
-		order.setUser(user);
-		order.setProduct(product);
-		entityManager.persist(order);
-		entityManager.merge(user);
-		entityManager.merge(product);
-		return order;
-	}
+    @Override
+    @Transactional
+    public Order generatorOrder(Product product, User user) {
+        Order order = new Order();
+        return order;
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Order purchaseByAccount(Product product, User user, Integer count) {
+        Order order = new Order();
+        order.setCreateTime(new Date());
+        order.setStatus(0);
+        order.setCount(count);
+        Double total = product.getSellPrice() * count;
+        order.setTotal(total);
+        product.setCount(product.getCount() - count);
+        user.setMoney(new BigDecimal(user.getMoney() - total).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+        order.setUser(user);
+        order.setProduct(product);
+        entityManager.persist(order);
+        entityManager.merge(user);
+        entityManager.merge(product);
+        return order;
+    }
 }

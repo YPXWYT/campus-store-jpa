@@ -17,37 +17,44 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "sys_role")
 @JsonIgnoreProperties(value = {"users"})
 public class Role {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private String name;
-    @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)  //配置多表关系
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)  //配置多表关系
     private Set<User> users = new HashSet<User>();
-    
+
     public Role() {
-    	
+
     }
-	public Role(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-	public Set<User> getUsers() {
-		return users;
-	}
-	public void setUsers(Set<User> users) {
-		this.users = users;
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
+    public Role(Integer id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

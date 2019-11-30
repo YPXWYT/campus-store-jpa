@@ -12,27 +12,27 @@ import com.tna.campus_store.exception.CountException;
 
 public interface UserService {
 
-	Msg loginByAccount(String account,String password);
-	
-	Msg loginByMobilePhone(String verification_code,HttpSession session);
-	
-	Msg registerByMobilePhone(HttpSession session,User user);
-	
-	Msg registerByMobilePhoneVerify(HttpSession session,String verification_code);
-	
-	Msg purchaseByAccount(User user, ProductKey pKey) throws CountException, BalanceException;
-	
-	Msg purchaseMultiByAccount(Integer user_id, List<ProductKey> pKeys);
-	
-	Msg isExistEmail(String email);
-	
-	Msg isExistAccount(String account);
-	
-	Msg findOneByToken(String token);
-	
-	Msg findAll();
-	
-	Msg saveWithRole(User user,Integer role_id);
-	
-	Msg update(User user);	
+    Msg loginByAccount(String account, String password);
+
+    Msg loginByMobilePhone(String verification_code, HttpSession session);
+
+    Msg registerByMobilePhone(HttpSession session, User user);
+
+    Msg registerByMobilePhoneVerify(HttpSession session, String verification_code);
+
+    Msg purchaseByAccount(User user, ProductKey pKey) throws CountException, BalanceException;
+
+    Msg purchaseMultiByAccount(Integer user_id, List<ProductKey> pKeys);
+
+    Msg isExistEmail(String email);
+
+    Msg isExistAccount(String account);
+
+    Msg findOneByToken(String token);
+
+    Msg findAll();
+
+    Msg saveWithRole(User user, Integer role_id);
+
+    Msg update(User user);
 }
