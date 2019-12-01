@@ -31,4 +31,24 @@ public class SchoolServiceImpl implements SchoolService {
         }
         return Msg.success("操作成功");
     }
+
+    @Override
+    public Msg findOneWithPros(Integer school_id) {
+        if (school_id==null){
+            return Msg.fail("参数不能为空", StatusEnum.HINT.getCode());
+        }
+        School school = schoolRepository.findOne(school_id);
+        if (school==null){
+            return Msg.fail("该学校不存在！", StatusEnum.HINT.getCode());
+        }
+        return Msg.success("操作成功！").add("school",school);
+    }
+
+    @Override
+    public Msg findOneWithProsByToken(String token) {
+        if (token==null){
+            return Msg.fail("参数不能为空", StatusEnum.HINT.getCode());
+        }
+        return null;
+    }
 }

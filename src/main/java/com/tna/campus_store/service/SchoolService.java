@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface SchoolService {
     Msg saveSchools(List<School> schools);
+
+    Msg findOneWithPros(Integer school_id);
+
+    Msg findOneWithProsByToken(String token);
 }

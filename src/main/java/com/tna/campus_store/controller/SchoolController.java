@@ -36,4 +36,8 @@ public class SchoolController {
         return schoolService.saveSchools(schools);
     }
 
+    @GetMapping("/find_o_w_pros")
+    public Msg findOneWithPros(Integer school_id){
+        return schoolService.findOneWithPros(school_id);
+    }
 }
