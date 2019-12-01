@@ -18,7 +18,6 @@ public class Address {
     private String phoneNumber;
     private Boolean isDefault;
     private String remark;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "user_id")
+    private Integer userId;
 }

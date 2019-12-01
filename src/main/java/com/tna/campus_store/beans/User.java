@@ -51,6 +51,5 @@ public class User {
     private Set<Role> roles = new HashSet<Role>();
     @OneToOne(mappedBy = "user")
     private Identification identification;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private Set<Address> addresses = new HashSet<Address>();
+
 }
