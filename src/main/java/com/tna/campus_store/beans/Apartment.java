@@ -14,7 +14,6 @@ public class Apartment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "school_id")
-    private School school;
+    @Column(name = "school_id")
+    private Integer schoolId;
 }
