@@ -1,5 +1,8 @@
 package com.tna.campus_store.beans;
 
+import lombok.Data;
+
+@Data
 public class TokenMsg extends Msg {
     private String token;
 
@@ -10,13 +13,4 @@ public class TokenMsg extends Msg {
         result.setMsg(msg);
         return result;
     }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
 }

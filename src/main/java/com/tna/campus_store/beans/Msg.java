@@ -1,5 +1,7 @@
 package com.tna.campus_store.beans;
 
+import lombok.Data;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +10,7 @@ import java.util.Map;
  *
  * @author lfy
  */
+@Data
 public class Msg {
     private int code;
     private String msg;
@@ -31,29 +34,5 @@ public class Msg {
     public Msg add(String key, Object value) {
         this.getData().put(key, value);
         return this;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public Map<String, Object> getData() {
-        return data;
-    }
-
-    public void setData(Map<String, Object> data) {
-        this.data = data;
     }
 }
