@@ -16,10 +16,8 @@ public class Identification {
     @Column(name = "stu_number")
     private String stuNumber;
     private String name;
-    private Integer school_id;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", unique = true)
-    private User user;
+    @Column(name = "school_id")
+    private Integer schoolId;
     @Column(name = "user_id")
     private Integer userId;
 }
