@@ -21,9 +21,9 @@ public class School {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @OneToMany(mappedBy = "school", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
     private Set<Apartment> apartments = new HashSet<Apartment>();
-    @OneToMany(mappedBy = "school", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
     private Set<Product> products = new HashSet<Product>();
 
     public Set<Product> getProducts() {
