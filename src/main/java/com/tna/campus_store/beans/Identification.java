@@ -1,16 +1,8 @@
 package com.tna.campus_store.beans;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "sys_identification")
@@ -22,9 +14,18 @@ public class Identification {
     @Column(name = "stu_number")
     private String stuNumber;
     private String name;
+    private Integer school_id;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", unique = true)
     private User user;
+
+    public Integer getSchool_id() {
+        return school_id;
+    }
+
+    public void setSchool_id(Integer school_id) {
+        this.school_id = school_id;
+    }
 
     public Integer getId() {
         return id;
