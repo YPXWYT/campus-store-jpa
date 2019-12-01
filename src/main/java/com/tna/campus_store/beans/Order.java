@@ -28,7 +28,6 @@ public class Order {
     private Double total;
     @Column(name = "user_id")
     private Integer userId;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @Column(name = "product_id")
+    private Integer ProId;
 }

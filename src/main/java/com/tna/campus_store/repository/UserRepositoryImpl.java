@@ -40,7 +40,7 @@ public class UserRepositoryImpl implements UserRepositoryDefine {
         product.setCount(product.getCount() - count);
         user.setMoney(new BigDecimal(user.getMoney() - total).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
 //        order.setUser(user);
-        order.setProduct(product);
+//        order.setProduct(product);
         entityManager.persist(order);
         entityManager.merge(user);
         entityManager.merge(product);

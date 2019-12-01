@@ -5,8 +5,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "sys_product")
@@ -34,8 +32,6 @@ public class Product {
     private Date modifyTime;
     @Column(name = "use_time")
     private Integer useTime;
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    private Set<Order> orders = new HashSet<Order>();
     @ManyToOne(fetch = FetchType.LAZY)
     private Classification classification;
     @ManyToOne(fetch = FetchType.LAZY)
