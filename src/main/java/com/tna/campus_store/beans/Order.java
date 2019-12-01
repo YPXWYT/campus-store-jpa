@@ -30,4 +30,5 @@ public class Order {
     private Integer userId;
     @Column(name = "product_id")
     private Integer ProId;
+    private String address;
 }
