@@ -24,10 +24,11 @@ public class ApartmentController {
 
     @Autowired
     public ApartmentController(ApartmentService apartmentService) {
+        super();
         this.apartmentService = apartmentService;
     }
 
-    @RequestMapping("/save_apts")
+    @RequestMapping(value = "/save_apts", method = RequestMethod.POST)
     public Msg saveApartmentsWithSchool(@RequestBody List<Apartment> apartments,
                                         @RequestParam("school_id") Integer school_id) {
         return apartmentService.saveApartmentsWithSchool(apartments, school_id);
