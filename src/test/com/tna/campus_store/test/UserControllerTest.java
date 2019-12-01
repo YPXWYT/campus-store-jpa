@@ -70,8 +70,8 @@ public class UserControllerTest {
 	@Test
 	public void purchaseMultiByAccount() {
 		List<ProductKey> pKeys = new ArrayList<ProductKey>();
-		pKeys.add(new ProductKey(1, 2));
-		pKeys.add(new ProductKey(2, 2));
+//		pKeys.add(new ProductKey(1, 2));
+//		pKeys.add(new ProductKey(2, 2));
 		User user = userRepository.findOne(1);
 		System.out.println(userService.purchaseMultiByAccount(1,pKeys).getMsg());
 //		userRepository.generatorOrder(1,1);		

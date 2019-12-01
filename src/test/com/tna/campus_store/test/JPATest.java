@@ -1,7 +1,8 @@
 package com.tna.campus_store.test;
 
-import java.util.Date;
-
+import com.tna.campus_store.repository.ProductRepository;
+import com.tna.campus_store.repository.RoleRepository;
+import com.tna.campus_store.repository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +10,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.tna.campus_store.beans.Product;
-import com.tna.campus_store.repository.ProductRepository;
-import com.tna.campus_store.repository.RoleRepository;
-import com.tna.campus_store.repository.UserRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
@@ -48,8 +44,8 @@ public class JPATest {
 	
 	@Test
 	public void testProduct() {
-		productRepository.save(new Product("软件工程师",new Date(),new Date()));
-		productRepository.save(new Product("201742060214",new Date(),new Date()));
+//		productRepository.save(new Product("软件工程师",new Date(),new Date()));
+//		productRepository.save(new Product("201742060214",new Date(),new Date()));
 	}
 	@Test
 	public void init() {

@@ -1,7 +1,9 @@
 package com.tna.campus_store.beans;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class TokenMsg extends Msg {
     private String token;

@@ -1,18 +1,16 @@
 package com.tna.campus_store.repository;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
+import com.tna.campus_store.beans.Order;
+import com.tna.campus_store.beans.Product;
+import com.tna.campus_store.beans.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tna.campus_store.beans.Order;
-import com.tna.campus_store.beans.Product;
-import com.tna.campus_store.beans.User;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.math.BigDecimal;
+import java.util.Date;
 
 public class UserRepositoryImpl implements UserRepositoryDefine {
 
@@ -41,7 +39,7 @@ public class UserRepositoryImpl implements UserRepositoryDefine {
         order.setTotal(total);
         product.setCount(product.getCount() - count);
         user.setMoney(new BigDecimal(user.getMoney() - total).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
-        order.setUser(user);
+//        order.setUser(user);
         order.setProduct(product);
         entityManager.persist(order);
         entityManager.merge(user);
