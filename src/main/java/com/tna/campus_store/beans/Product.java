@@ -34,6 +34,6 @@ public class Product {
     private Integer useTime;
     @ManyToOne(fetch = FetchType.LAZY)
     private Classification classification;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private School school;
+    @Column(name = "school_id")
+    private Integer schoolId;
 }

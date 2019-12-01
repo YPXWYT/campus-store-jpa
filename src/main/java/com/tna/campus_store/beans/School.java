@@ -18,7 +18,4 @@ public class School {
     private String name;
     @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
     private Set<Apartment> apartments = new HashSet<Apartment>();
-    @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)
-    private Set<Product> products = new HashSet<Product>();
-
 }
