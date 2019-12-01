@@ -16,4 +16,6 @@ public class Student {
     @Column(name = "stu_number")
     private String stuNumber;
     private String name;
+    @Column(name = "school_id")
+    private Integer schoolId;
 }
