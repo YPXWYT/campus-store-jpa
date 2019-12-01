@@ -1,6 +1,5 @@
 package com.tna.campus_store.beans;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -35,10 +34,6 @@ public class Product {
     private Date modifyTime;
     @Column(name = "use_time")
     private Integer useTime;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    @JsonIgnore
-    private User user;
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private Set<Order> orders = new HashSet<Order>();
     @ManyToOne(fetch = FetchType.LAZY)

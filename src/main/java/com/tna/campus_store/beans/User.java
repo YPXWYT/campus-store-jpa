@@ -41,9 +41,8 @@ public class User {
     @Column(name = "modify_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifyTime;
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private Set<Product> products = new HashSet<Product>();
-
+    @Column(name = "user_id")
+    private Integer userId;
     @JoinTable(name = "sys_user_role",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
