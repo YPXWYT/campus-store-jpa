@@ -48,7 +48,4 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
     @ManyToMany(targetEntity = Role.class, fetch = FetchType.LAZY)
     private Set<Role> roles = new HashSet<Role>();
-    @OneToOne(mappedBy = "user")
-    private Identification identification;
-
 }

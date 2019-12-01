@@ -20,4 +20,6 @@ public class Identification {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", unique = true)
     private User user;
+    @Column(name = "user_id")
+    private Integer userId;
 }
